@@ -1,0 +1,67 @@
+*{
+	box-sizing: border-box;
+}
+body {
+	background-color: DarkSeaGreen;
+	border: 2px DarkSlateGrey double;
+
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 50px;
+
+	font-size: 20px;
+	font: Monaco;
+}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+}
+h3 { 
+	letter-spacing: 1px; 
+	margin-bottom: 20px; 
+	color: DarkSlateGrey;
+}
+h2 { 
+	letter-spacing: 1px; 
+	margin-bottom: 20px; 
+	color: DarkSlateGrey;
+}
+h1 { 
+	letter-spacing: 1px; 
+	margin-bottom: 20px; 
+	color: Gray;
+}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: DarkSlateGrey;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: DarkSlateGrey;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: Gray;
+	}
+	li {
+	line-height: 1.3em; 
+	list-style-image: url("HTB1uxygXtfvK1RjSspf762zXFXaH.png");
+	padding-top: 5px; 
+	margin-bottom: 5px;
+	
+	}
+.page-wrapper { 
+	background-image: url("nalogoviy_vychet.jpg"); 
+	padding: 0 175px 0 110px;  
+	margin: 0; 
+	position: relative;
+	}
+

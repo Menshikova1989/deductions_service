@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="559.0" spacing="20.0" style="-fx-background-color: LightGrey;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <TabPane fx:id="panelTabPane" prefHeight="521.0" prefWidth="519.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="infoTab" style="fx-font-color: #2f4f4f;" text="Анкета пользователя">
+            <content>
+              <AnchorPane cache="true" cacheHint="SPEED" minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="527.0">
+                     <children>
+                        <ChoiceBox fx:id="childCountChoiceBox" layoutX="400.0" layoutY="245.0" onAction="#childCountChoiceBoxAction" />
+                        <TextField fx:id="nameTextField" layoutX="400.0" layoutY="160.0" prefHeight="25.0" prefWidth="106.0" />
+                        <DatePicker fx:id="birthDay1DatePieker" disable="true" layoutX="400.0" layoutY="290.0" prefHeight="25.0" prefWidth="104.0" />
+                        <DatePicker fx:id="birthDay2DatePieker" disable="true" layoutX="400.0" layoutY="335.0" prefHeight="25.0" prefWidth="103.0" />
+                        <DatePicker fx:id="birthDay3DatePieker" disable="true" layoutX="400.0" layoutY="380.0" prefHeight="25.0" prefWidth="105.0" />
+                        <Label layoutX="30.0" layoutY="160.0" text="Введите ваше имя" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Button fx:id="saveButton" defaultButton="true" layoutX="300.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="25.0" prefWidth="95.0" text="Сохранить" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView boundsType="VISUAL" fill="#026e0b" glyphName="CHECK" size="14" />
+                           </graphic></Button>
+                        <Label fx:id="textLabel" layoutX="30.0" layoutY="205.0" text="Имеется ли у вас доход, облагаемый по ставке 13%?" textFill="DARKSLATEGRAY" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="text2Label" layoutX="30.0" layoutY="250.0" text="Если у вас есть дети, укажите их количество" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="date1Label" disable="true" layoutX="30.0" layoutY="295.0" text="Укажите дату рождения первого ребенка" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="date2Label" disable="true" layoutX="30.0" layoutY="340.0" text="Укажите дату рождения второго ребенка" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="date3Label" disable="true" layoutX="30.0" layoutY="385.0" text="Укажите дату рождения третьего ребенка" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Button fx:id="clearButton" cancelButton="true" layoutX="190.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="25.0" prefWidth="95.0" text="Очистить" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView fill="#e98d50" glyphName="RECYCLE" size="14" />
+                           </graphic></Button>
+                        <RadioButton fx:id="yesRadioButton" layoutX="400.0" layoutY="205.0" mnemonicParsing="false" onAction="#yesRadioButtonAction" text="да" textFill="DARKSLATEGRAY">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="incomeInfo" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="noRadioButton" layoutX="450.0" layoutY="205.0" mnemonicParsing="false" onAction="#noRadioButtonAction" text="нет" textFill="DARKSLATEGRAY" toggleGroup="$incomeInfo">
+                           <font>
+                              <Font size="15.0" />
+                           </font></RadioButton>
+                        <Button fx:id="nextButton" disable="true" layoutX="410.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButtonAction" prefHeight="25.0" prefWidth="95.0" text="Далее" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView fill="#8c81c0" glyphName="SHARE" size="15" />
+                           </graphic></Button>
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="USER" layoutX="10.0" layoutY="175.0" size="20" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="CHILD" layoutX="10.0" layoutY="265.0" size="20" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="RUB" layoutX="10.0" layoutY="220.0" size="20" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="INFO" layoutX="12.0" layoutY="310.0" size="20" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="INFO" layoutX="12.0" layoutY="355.0" size="20" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="INFO" layoutX="12.0" layoutY="400.0" size="20" />
+                        <Label layoutX="20.0" layoutY="20.0" text="ЗАПОЛНИТЕ АНКЕТУ ПОЛЬЗОВАТЕЛЯ" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font name="Calisto MT Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="50.0" text="ДЛЯ ПОЛУЧЕНИЯ ИНФОРМАЦИИ" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font name="Calisto MT" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="80.0" text="О ПОЛОЖЕННЫХ ВАМ" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font name="Calisto MT" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="110.0" text="НАЛОГОВЫХ ВЫЧЕТАХ" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font name="Calisto MT" size="16.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="INFO" layoutX="2.0" layoutY="40.0" size="20" />
+                        <Separator layoutX="4.0" layoutY="147.0" prefHeight="7.0" prefWidth="501.0" />
+                        <ImageView fitHeight="127.0" fitWidth="200.0" layoutX="310.0" layoutY="16.0">
+                           <image>
+                              <Image url="@nalogoviy_vychet.jpg" />
+                           </image>
+                        </ImageView>
+
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="incomeAndCostTab" disable="true" text="Информация о доходах и расходах">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="incomeTableView" layoutX="2.0" layoutY="31.0" prefHeight="327.0" prefWidth="511.0">
+                          <columns>
+                            <TableColumn fx:id="monthTableColumn" prefWidth="120.0" resizable="false" text="Месяц" />
+                            <TableColumn fx:id="incomeTableColumn" prefWidth="195.0" resizable="false" text="Сумма" />
+                              <TableColumn fx:id="sumIncomeTableColumn" prefWidth="195.0" resizable="false" text="Доход нарастающим итогом" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="20.0" layoutY="5.0" text="УКАЖИТЕ ВАШ ДОХОД ПО МЕСЯЦАМ ДО ВЫЧЕТА НАЛОГА" textFill="DARKSLATEGRAY">
+                           <font>
+                              <Font name="Calisto MT Bold" size="16.0" />
+                           </font></Label>
+                        <Label layoutX="20.0" layoutY="370.0" text="Расходы на лечение" textFill="DARKSLATEGRAY" />
+                        <Label layoutX="20.0" layoutY="400.0" prefHeight="17.0" prefWidth="124.0" text="Расходы на обучение" textFill="DARKSLATEGRAY" />
+                        <CheckBox fx:id="medicalCheckBox" layoutX="159.0" layoutY="370.0" mnemonicParsing="false" onAction="#medicalCheckBoxAction" text="были в отчетном году" textFill="DARKSLATEGRAY" />
+                        <CheckBox fx:id="educationCheckBox" layoutX="159.0" layoutY="400.0" mnemonicParsing="false" onAction="#educationCheckBoxAction" text="были в отчетном году" textFill="DARKSLATEGRAY" />
+                        <Label layoutX="343.0" layoutY="370.0" text="в сумме" textFill="DARKSLATEGRAY" />
+                        <Label layoutX="343.0" layoutY="400.0" text="в сумме" textFill="DARKSLATEGRAY" />
+                        <TextField fx:id="medicalCostsTextField" disable="true" layoutX="397.0" layoutY="367.0" prefHeight="25.0" prefWidth="106.0" />
+                        <TextField fx:id="educationCostsTextField" disable="true" layoutX="397.0" layoutY="397.0" prefHeight="25.0" prefWidth="105.0" />
+                        <Button fx:id="calculateButton" layoutX="300.0" layoutY="430.0" mnemonicParsing="false" onAction="#calculateButtonAction" prefHeight="25.0" prefWidth="95.0" text="Рассчитать" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView fill="#026e0b" glyphName="CALCULATOR" size="15" />
+                           </graphic></Button>
+                        <FontAwesomeIconView fill="#026e0b" glyphName="UNIVERSITY" layoutY="415.0" size="17" />
+                        <FontAwesomeIconView fill="#dd0707" glyphName="HEARTBEAT" layoutY="385.0" size="17" />
+                        <FontAwesomeIconView fill="DARKSLATEGRAY" glyphName="INFO" layoutX="6.0" layoutY="21.0" size="20" />
+                        <Button fx:id="detailsButton" layoutX="400.0" layoutY="430.0" mnemonicParsing="false" onAction="#detailsButtonAction" prefHeight="25.0" prefWidth="95.0" text="Подробнее" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView fill="#8c81c0" glyphName="SHARE" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="reportButton" disable="true" layoutX="200.0" layoutY="430.0" mnemonicParsing="false" onAction="#reportButtonAction" prefHeight="25.0" prefWidth="95.0" text="Результат" textFill="DARKSLATEGRAY">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PRINT" size="15" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
